@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1368,1612</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1368,1605</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System1_Close_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -65,13 +65,9 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Closes System1 IE Browser" DisplayName="System1_Close" sap:VirtualizedContainerService.HintSize="1378,1547" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Closes System1 IE Browser" DisplayName="System1_Close" sap:VirtualizedContainerService.HintSize="1378,1540" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strComponentName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">System1_Close</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="System1_Close" Name="strComponentName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -79,13 +75,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser - ACME" sap:VirtualizedContainerService.HintSize="1336,1424" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="488f5159080791cbad106413091ec8ea" Selector="[String.Format(&quot;&lt;html url='{0}*' /&gt;&quot;, in_System1URL)]">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser - ACME" sap:VirtualizedContainerService.HintSize="1336,1417" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="488f5159080791cbad106413091ec8ea" Selector="[String.Format(&quot;&lt;html url='{0}*' /&gt;&quot;, in_System1URL)]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1302,1278" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1302,1271" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="logoutExists" />
             </Sequence.Variables>
@@ -106,9 +102,9 @@
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[LogoutExists]" DisplayName="If Logout Button Exists" sap:VirtualizedContainerService.HintSize="1260,1040" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[LogoutExists]" DisplayName="If Logout Button Exists" sap:VirtualizedContainerService.HintSize="1260,1033" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="839,881" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence sap:VirtualizedContainerService.HintSize="839,876" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="logoutConfirmationExists" />
                   </Sequence.Variables>
@@ -151,31 +147,29 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[logoutConfirmationExists]" DisplayName="If Logout Confirmation Exists" sap:VirtualizedContainerService.HintSize="797,497" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[logoutConfirmationExists]" DisplayName="If Logout Confirmation Exists" sap:VirtualizedContainerService.HintSize="797,492" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,331" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_10">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[strComponentName +&quot; : Successfully logged out of ACME.&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[strComponentName +&quot; : Successfully logged out of ACME.&quot;]" />
                         <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window IE ACME" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseWindow_2" InformativeScreenshot="14f9c03d081a95bc2a706f2621bd70b0" WaitForReady="INTERACTIVE" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,338" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,335" sap2010:WorkflowViewState.IdRef="Sequence_9">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[strComponentName + &quot;: Logout confirmation does not exist. Forcing close application.&quot;]" />
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[strComponentName + &quot;: Logout confirmation does not exist. Forcing close application.&quot;]" />
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                            </InArgument>
+                            <scg:Dictionary x:TypeArguments="x:String, Argument" />
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -184,18 +178,16 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,338" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,335" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[strComponentName + &quot;: Log out button does not exist, force closing application.&quot;]" />
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[strComponentName + &quot;: Log out button does not exist, force closing application.&quot;]" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                        <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>

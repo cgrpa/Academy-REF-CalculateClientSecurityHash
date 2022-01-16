@@ -7,10 +7,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1120,1720</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1120,1873</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ACME_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="50">
+    <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -46,7 +46,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="29">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -75,9 +75,10 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Opens an IE browser to the input URL" DisplayName="System1_Login" sap:VirtualizedContainerService.HintSize="1102,1655" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Opens an IE browser to the input URL" DisplayName="System1_Login" sap:VirtualizedContainerService.HintSize="1102,1808" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="emailPassword" />
       <Variable x:TypeArguments="x:String" Default="chelewgamble@gmail.com" Name="emailUsername" />
@@ -90,13 +91,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_System1Credential]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1060,80" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[emailPassword]" Username="[emailUsername]" />
-    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" DisplayName="Open Browser - ACME Web Page" sap:VirtualizedContainerService.HintSize="1060,1412" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_System1URL]">
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" BrowserType="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" DisplayName="Open Browser - ACME Web Page" sap:VirtualizedContainerService.HintSize="1060,1565" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_System1URL]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1026,1310" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1026,1463" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -148,8 +149,8 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <Pick sap:VirtualizedContainerService.HintSize="984,752" sap2010:WorkflowViewState.IdRef="Pick_1">
-              <PickBranch sap:VirtualizedContainerService.HintSize="426,706" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+            <Pick sap:VirtualizedContainerService.HintSize="984,905" sap2010:WorkflowViewState.IdRef="Pick_1">
+              <PickBranch sap:VirtualizedContainerService.HintSize="426,859" sap2010:WorkflowViewState.IdRef="PickBranch_1">
                 <PickBranch.Variables>
                   <Variable x:TypeArguments="x:String" Default="ACME_Login" Name="strComponentName" />
                 </PickBranch.Variables>
@@ -167,27 +168,49 @@
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
                 </PickBranch.Trigger>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,400" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,553" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[strComponentName +&quot; : Error: Login Credentials are incorrect.&quot;]" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Folder">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ExScreenshotsFolderPath&quot;).ToString" />
+                      </InArgument>
+                      <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">
+                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="ScreenshotPath" />
+                      </InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendEmail workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Common\SendEmail.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_To">[in_Config("ExceptionsEmailAddress").ToString]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Subject">ACME Process Exception</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_Body" xml:space="preserve">Hello, 
+                      <InArgument x:TypeArguments="x:String" x:Key="in_To">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ExceptionsEmailAddress&quot;).ToString" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                        <Literal x:TypeArguments="x:String">ACME Process Exception</Literal>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                        <Literal x:TypeArguments="x:String" xml:space="preserve">Hello, 
 The username or the email is incorrect. Please 
 check and restart 
-Thank you’’</InArgument>
+Thank you’’</Literal>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_ScreenshotPath">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ScreenshotPath" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                   <Throw DisplayName="Throw BusinessException" Exception="[new BusinessRuleException(&quot;Incorrect credentials for ACME.&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                 </Sequence>
               </PickBranch>
-              <PickBranch sap:VirtualizedContainerService.HintSize="384,706" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+              <PickBranch sap:VirtualizedContainerService.HintSize="384,859" sap2010:WorkflowViewState.IdRef="PickBranch_2">
                 <PickBranch.Trigger>
                   <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists - Welcome {{emailUsername}}" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                     <ui:UiElementExists.Target>
