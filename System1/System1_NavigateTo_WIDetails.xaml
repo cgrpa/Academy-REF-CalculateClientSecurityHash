@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1119,1654</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1120,1781</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System1_NavigateTo_WIDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -40,7 +40,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="42">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -62,20 +62,18 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Navigates to the WI Details Page using the WIID input argumen" DisplayName="System1_NavigateTo_WIDetails" sap:VirtualizedContainerService.HintSize="530,1589" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Navigates to the WI Details Page using the WIID input argumen" DisplayName="System1_NavigateTo_WIDetails" sap:VirtualizedContainerService.HintSize="530,1716" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:Boolean" Name="WIIDExists">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Boolean" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="strComponentName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">System1_NavigateTO_WIDetails</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="False" Name="WIIDExists" />
+      <Variable x:TypeArguments="x:String" Default="System1_NavigateTO_WIDetails" Name="strComponentName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -83,13 +81,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser - ACME" sap:VirtualizedContainerService.HintSize="488,1466" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="fcb2438a66b6aea435e323b39e88e380" Selector="[String.Format(&quot;&lt;html url='{0}*' /&gt;&quot;, in_System1_URL)]">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser - ACME" sap:VirtualizedContainerService.HintSize="488,1593" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="fcb2438a66b6aea435e323b39e88e380" Selector="[String.Format(&quot;&lt;html url='{0}*' /&gt;&quot;, in_System1_URL)]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="454,1320" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="454,1447" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -139,16 +137,13 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="412,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[strComponentName +&quot;: Is looking for WIID: &quot; + in_WIID]" />
             <ui:UiElementExists DisplayName="Element Exists - Desired WIID" Exists="[WIIDExists]" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c39dadf6-b62e-4a13-b8e3-87242c791d42" InformativeScreenshot="35e94963021986cb211825a21adc0c54" Selector="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TD' aaname='{0}' /&gt;&quot;, in_WIID)]" TimeoutMS="1000">
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c39dadf6-b62e-4a13-b8e3-87242c791d42" InformativeScreenshot="35e94963021986cb211825a21adc0c54" Selector="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TD' aaname='{0}' /&gt;&quot;, in_WIID)]" TimeoutMS="2500" WaitForReady="COMPLETE" />
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="412,511" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+            <ui:InterruptibleWhile Condition="[WIIDExists = False]" DisplayName="While" sap:VirtualizedContainerService.HintSize="412,509" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
               <ui:InterruptibleWhile.Body>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -180,18 +175,11 @@
                   </ui:Click>
                   <ui:UiElementExists DisplayName="Element Exists - Desired WIID" Exists="[WIIDExists]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c39dadf6-b62e-4a13-b8e3-87242c791d42" InformativeScreenshot="35e94963021986cb211825a21adc0c54" Selector="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TD' aaname='{0}' /&gt;&quot;, in_WIID)]" TimeoutMS="1000">
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c39dadf6-b62e-4a13-b8e3-87242c791d42" InformativeScreenshot="35e94963021986cb211825a21adc0c54" Selector="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tag='TD' aaname='{0}' /&gt;&quot;, in_WIID)]" TimeoutMS="2500" WaitForReady="COMPLETE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
                 </Sequence>
               </ui:InterruptibleWhile.Body>
-              <ui:InterruptibleWhile.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="WIIDExists = False" />
-              </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
             <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Details" sap:VirtualizedContainerService.HintSize="412,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
@@ -215,7 +203,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="412,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[strComponentName + &quot;: Found WIID &quot; + in_WIID]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="412,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[strComponentName + &quot;: Found WIID &quot; + in_WIID]" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

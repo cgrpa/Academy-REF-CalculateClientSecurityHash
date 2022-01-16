@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="System1_UpdateWorkItem" this:System1_UpdateWorkItem.in_Status="Completed" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="System1_UpdateWorkItem" this:System1_UpdateWorkItem.in_Status="Completed" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Comment" Type="InArgument(x:String)" />
     <x:Property Name="in_Status" Type="InArgument(x:String)" />
@@ -6,10 +6,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1120,1351</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1120,2173</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System1_UpdateWorkItem_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="54">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -37,10 +37,12 @@
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
-    </sco:Collection>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="21">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -62,27 +64,34 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System1_UpdateWorkItem" sap:VirtualizedContainerService.HintSize="552,1286" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="System1_UpdateWorkItem" sap:VirtualizedContainerService.HintSize="991,2108" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strComponentName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">System1_UpdateWorkItem</Literal>
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser '- ACME WorkItem" sap:VirtualizedContainerService.HintSize="510,1194" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="87d9c5eaf876b90e4e916ceb5748a2a4" Selector="&lt;html title='ACME System 1 - Work Items' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser '- ACME WorkItem" sap:VirtualizedContainerService.HintSize="949,2016" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="87d9c5eaf876b90e4e916ceb5748a2a4" Selector="&lt;html title='ACME System 1 - Work Items' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,1048" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="915,1870" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Update Work Item button" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Update Work Item button" sap:VirtualizedContainerService.HintSize="873,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -104,19 +113,22 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser - WI Update Item Window" sap:VirtualizedContainerService.HintSize="434,810" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="dfe4eec871a44043f47cb9dae85a7fe5" Selector="&lt;html htmlwindowname='WI-Update' title='ACME System 1' /&gt;">
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser - WI Update Item Window" sap:VirtualizedContainerService.HintSize="873,1632" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="dfe4eec871a44043f47cb9dae85a7fe5" Selector="&lt;html htmlwindowname='WI-Update' title='ACME System 1' /&gt;">
               <ui:BrowserScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,664" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,1486" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="SuccessfulUpdate" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Comments Area" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_Comment]">
+                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Comments Area" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_Comment]">
                       <ui:TypeInto.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a3ca5a3e-56cc-4ac2-9361-5929955e05ad" InformativeScreenshot="0c161e9f59723a466a1244864f09a035" Selector="&lt;webctrl tag='TEXTAREA' id='newComment' /&gt;">
                           <ui:Target.TimeoutMS>
@@ -128,7 +140,7 @@
                         </ui:Target>
                       </ui:TypeInto.Target>
                     </ui:TypeInto>
-                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click New Status" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click New Status" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -150,7 +162,7 @@
                         </ui:Target>
                       </ui:Click.Target>
                     </ui:Click>
-                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click in_Status status" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click in_Status status" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -172,7 +184,7 @@
                         </ui:Target>
                       </ui:Click.Target>
                     </ui:Click>
-                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Update Work Item Button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Update Work Item Button" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -185,6 +197,85 @@
                       </ui:Click.CursorPosition>
                       <ui:Click.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2207bfc0-da66-490c-8a37-b36e47d07e8b" InformativeScreenshot="04541a74276c0fdafac118dfa56eaf79" Selector="&lt;webctrl id='buttonUpdate' tag='BUTTON' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                    <ui:UiElementExists DisplayName="Element Exists - Dialog" Exists="[SuccessfulUpdate]" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6d44d4c0-209c-4dfa-8062-7ba80db145ef" InformativeScreenshot="91ac9a1d64a7a5620f51e6c97cec30f5" Selector="&lt;wnd app='iexplore.exe' title='Message from webpage' /&gt;&lt;ctrl name='Message from webpage' role='dialog' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <If Condition="[SuccessfulUpdate]" DisplayName="If Item Was Updated Successfully" sap:VirtualizedContainerService.HintSize="797,490" sap2010:WorkflowViewState.IdRef="If_1">
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,331" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[strComponentName + &quot;: Successfully updated WorkItem&quot;]" />
+                          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Ok to confirmation" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition Position="Center">
+                                <ui:CursorPosition.OffsetX>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetX>
+                                <ui:CursorPosition.OffsetY>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetY>
+                              </ui:CursorPosition>
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6942c83b-627a-4e8c-9155-a70f20e8a765" InformativeScreenshot="9d8beaa3b75b180ddc1dfa7c2b059eb8" Selector="&lt;wnd app='iexplore.exe' title='Message from webpage' /&gt;&lt;wnd title='OK' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:Click.Target>
+                          </ui:Click>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,247" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[strComponentName = &quot;: WorkItem was not updated correctly.&quot;]" />
+                          <Throw DisplayName="Throw Exception" Exception="[New Exception(&quot;WorkItem was not updated successfully.&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Close" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1cf590e5-4d1a-481a-8341-7225d7ceb3c3" InformativeScreenshot="d0b10f4119ffa323c8403f917f864bc9" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='ACME System 1 - Internet Explorer' /&gt;&lt;ctrl name='Close' role='push button' /&gt;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>

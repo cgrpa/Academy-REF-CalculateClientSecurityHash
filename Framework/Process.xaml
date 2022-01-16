@@ -108,8 +108,12 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SHA1Online_ProcessHash workflow" sap:VirtualizedContainerService.HintSize="364,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SHA1Online\SHA1Online_ProcessHash.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_HashFormula">[String.Format("{0}-{1}-{2}", clientID, clientName, clientCountry)]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="out_HashResult">[hashResult]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_HashFormula">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="String.Format(&quot;{0}-{1}-{2}&quot;, clientID, clientName, clientCountry)" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_HashResult">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="hashResult" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke System1_UpdateWorkItem workflow" sap:VirtualizedContainerService.HintSize="364,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="System1\System1_UpdateWorkItem.xaml">

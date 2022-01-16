@@ -96,7 +96,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into Text to Hash Field" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_HashFormula]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into Text to Hash Field" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_HashFormula]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9a2a56fa-94de-4646-b33c-9a841d89fcd2" InformativeScreenshot="a2a510fb251063baa8eb3548e42ef2c4" Selector="&lt;webctrl tag='INPUT' id='textToHashId' /&gt;">
                   <ui:Target.TimeoutMS>
